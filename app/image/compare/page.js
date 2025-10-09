@@ -1,8 +1,8 @@
 import Link from "next/link"
 import ImageCompare from "../../components/ImageCompare"
 
-const ORIGINAL_IMAGE = "/images/compare-original.svg"
-const ENHANCED_IMAGE = "/images/compare-enhanced.svg"
+const ORIGINAL_IMAGE = "/helloNextJs/images/compare-original.svg"
+const ENHANCED_IMAGE = "/helloNextJs/images/compare-enhanced.svg"
 
 export default function ImageComparePage() {
   return (

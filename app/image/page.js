@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useCallback, useLayoutEffect, useRef, useState } from "react"
 
-const IMAGE_PATH = "/images/panorama.svg"
+const IMAGE_PATH = "/helloNextJs/images/panorama.svg"
 
 export default function ImagePage() {
   const containerRef = useRef(null)
