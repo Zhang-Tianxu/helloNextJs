@@ -12,8 +12,11 @@ export default function Navigation() {
       <Link href="/" className={styles.navLink}>
         {t('nav.home')}
       </Link>
-      <Link href="/papers" className={styles.navLink}>
-        {t('nav.papers')}
+      <Link href="/image" className={styles.navLink}>
+        {t('nav.image')}
+      </Link>
+      <Link href="/image-compare" className={styles.navLink}>
+        {t('nav.image-compare')}
       </Link>
     </nav>
   );

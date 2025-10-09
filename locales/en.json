@@ -5,7 +5,9 @@
   },
   "nav": {
     "home": "Home",
-    "papers": "Papers"
+    "papers": "Papers",
+    "image": "Image",
+    "image-compare": "Image Compare"
   },
   "paper": {
     "title": "Open-World Reinforcement Learning over Long Short-Term Imagination",

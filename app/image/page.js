@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 import { useCallback, useLayoutEffect, useRef, useState } from "react"
+import Navigation from "../components/Navigation"
+import LanguageSwitcher from "../components/LanguageSwitcher"
 
 const IMAGE_PATH = "/helloNextJs/images/panorama.svg"
 
@@ -93,6 +95,8 @@ export default function ImagePage() {
 
   return (
     <main style={styles.main}>
+        <Navigation />
+      <LanguageSwitcher />
       <header style={styles.header}>
         <h1 style={styles.heading}>Draggable Panorama</h1>
         <p style={styles.subtitle}>

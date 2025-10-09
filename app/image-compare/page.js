@@ -1,5 +1,7 @@
 import Link from "next/link"
-import ImageCompare from "../../components/ImageCompare"
+import ImageCompare from "../components/ImageCompare"
+import Navigation from "../components/Navigation"
+import LanguageSwitcher from "../components/LanguageSwitcher"
 
 const ORIGINAL_IMAGE = "/helloNextJs/images/compare-original.svg"
 const ENHANCED_IMAGE = "/helloNextJs/images/compare-enhanced.svg"
@@ -7,19 +9,13 @@ const ENHANCED_IMAGE = "/helloNextJs/images/compare-enhanced.svg"
 export default function ImageComparePage() {
   return (
     <main style={styles.main}>
+        <Navigation />
+      <LanguageSwitcher />
       <header style={styles.header}>
         <h1 style={styles.heading}>图片对比预览</h1>
         <p style={styles.body}>
           拖动中间的白色分割线即可实时调整原图与新图的占比，快速观察调色或后期处理的差异。
         </p>
-        <div style={styles.links}>
-          <Link href="/" style={styles.link}>
-            返回首页
-          </Link>
-          <Link href="/image" style={styles.secondaryLink}>
-            查看拖拽全景图
-          </Link>
-        </div>
       </header>
       <ImageCompare
         leftSrc={ORIGINAL_IMAGE}
@@ -28,15 +24,6 @@ export default function ImageComparePage() {
       rightAlt="增强色调后的山景插画"
         height={480}
       />
-      <section style={styles.tips}>
-        <h2 style={styles.tipsHeading}>使用小贴士</h2>
-        <ul style={styles.list}>
-          <li>鼠标移动到中间白色分割线上可拖动调整比例。</li>
-          <li>可使用键盘左右方向键微调，每次 2%，按住 Shift 可快速调整 10%。</li>
-          <li>图片比例实时更新，无过渡延迟，方便精确对比。</li>
-          <li>输入范围已隐藏在组件中，方便无障碍辅助设备使用。</li>
-        </ul>
-      </section>
     </main>
   )
 }

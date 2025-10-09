@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <main>
-      <LanguageSwitcher />
       <Navigation />
-      <div style={{fontSize: '24px', fontWeight: 'bold', margin: '20px 0'}}>{t('site.title')}</div>
-      <p style={{fontSize: '16px', color: '#666'}}>{t('site.description')}</p>
+      <LanguageSwitcher />
+      {/* <div style={{fontSize: '24px', fontWeight: 'bold', margin: '20px 0'}}>{t('site.title')}</div> */}
+      {/* <p style={{fontSize: '16px', color: '#666'}}>{t('site.description')}</p> */}
     </main>
   );
 }

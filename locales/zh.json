@@ -5,7 +5,9 @@
   },
   "nav": {
     "home": "首页",
-    "papers": "论文"
+    "papers": "论文",
+    "image": "图像",
+    "image-compare": "图像对比"
   },
   "paper": {
     "title": "开放世界强化学习中的长短期想象",
