@@ -1,0 +1,36 @@
+{
+  "site": {
+    "title": "Next.js 部署到 GitHub Pages",
+    "description": "将您的静态 Next.js 网站部署到 GitHub Pages。"
+  },
+  "nav": {
+    "home": "首页",
+    "papers": "论文"
+  },
+  "paper": {
+    "title": "开放世界强化学习中的长短期想象",
+    "abstract": "摘要",
+    "evaluation": "评估",
+    "bibtex": "BibTeX",
+    "copy": "复制",
+    "copied": "已复制！",
+    "copyFailed": "复制失败",
+    "copyTitle": "复制BibTeX",
+    "copiedTitle": "已复制！",
+    "links": {
+      "paper": "论文",
+      "arxiv": "arXiv",
+      "code": "代码",
+      "slides": "幻灯片",
+      "thread": "讨论",
+      "bilibili": "bilibili"
+    },
+    "abstractContent": "在高维开放世界中训练视觉强化学习智能体面临着重大挑战。虽然各种基于模型的方法通过学习交互式世界模型提高了样本效率，但这些智能体往往具有短视特性，因为它们通常在短片段的想象体验上进行训练。我们认为开放世界决策制定的主要挑战是提高在广阔状态空间中的探索效率，特别是对于需要考虑长期回报的任务。在本文中，我们提出了LS-Imgine，它在有限的状态转换步骤内扩展了想象视野，使智能体能够探索可能导致有希望的长期反馈的行为。我们方法的基础是构建一个长短期世界模型。为了实现这一点，我们模拟目标条件下的跳跃状态转换，并通过放大单张图像中的特定区域来计算相应的可供性映射。这促进了直接长期价值到行为学习中的集成。我们的方法在MineDojo中展示了相对于最先进技术的显著改进。",
+    "frameworkDescription": "LS-Imagine的总体框架，这是一个仅在原始像素上操作的MBRL智能体。基本思想是在有限的状态转换步骤内扩展想象视野，使智能体能够探索可能导致有希望的长期反馈的行为。"
+  },
+  "language": {
+    "switch": "切换语言",
+    "english": "English",
+    "chinese": "中文"
+  }
+}

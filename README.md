@@ -25,3 +25,14 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## 中文文档
+
+- 详细指南：使用 Next.js 构建并部署到 GitHub Pages（含 Actions 流水线、basePath 说明、常见问题）
+	- docs/deploy-nextjs-to-github-pages.zh.md
+ - 实现站点内容：React + HTML + CSS + TypeScript 实践
+	 - docs/build-content-with-react-html-css-ts.zh.md
+ - 零基础语法入门：HTML / CSS / TypeScript
+	 - docs/basics-html-css-typescript.zh.md
+ - 从 0 到 1 学习路线：HTML/CSS/TS + React/Next.js + 部署
+	 - docs/zero-to-one-learning-path.zh.md

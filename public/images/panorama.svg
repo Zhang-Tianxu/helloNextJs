@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1400" width="2400" height="1400" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract panoramic landscape</title>
+  <desc id="desc">A stylised mountain skyline with layers of colour, designed for panning interaction.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#89c2ff" />
+      <stop offset="100%" stop-color="#f4f8ff" />
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd36b" />
+      <stop offset="100%" stop-color="#ff8a4c" />
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#214252" />
+      <stop offset="100%" stop-color="#2a6f97" />
+    </linearGradient>
+    <linearGradient id="mountain2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#386fa4" />
+      <stop offset="100%" stop-color="#59a5d8" />
+    </linearGradient>
+    <linearGradient id="mountain3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#57cc99" />
+      <stop offset="100%" stop-color="#80ed99" />
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a759f" />
+      <stop offset="50%" stop-color="#52b69a" />
+      <stop offset="100%" stop-color="#253d5b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="2400" height="1400" fill="url(#sky)" />
+
+  <circle cx="1800" cy="260" r="120" fill="url(#sun)" opacity="0.85" />
+
+  <path d="M0 580 L180 520 L360 540 L520 480 L720 500 L900 420 L1120 460 L1360 400 L1600 440 L1840 380 L2100 420 L2400 360 L2400 800 L0 800 Z" fill="url(#mountain1)" opacity="0.65" />
+  <path d="M0 720 L200 680 L400 690 L640 640 L880 660 L1080 600 L1320 620 L1600 580 L1880 620 L2120 580 L2400 620 L2400 960 L0 960 Z" fill="url(#mountain2)" opacity="0.7" />
+  <path d="M0 900 L220 880 L460 900 L720 860 L940 880 L1160 840 L1400 860 L1640 820 L1920 860 L2140 820 L2400 840 L2400 1120 L0 1120 Z" fill="url(#mountain3)" opacity="0.8" />
+  <path d="M0 1040 Q300 1100 600 1060 T1200 1080 T1800 1060 T2400 1090 L2400 1400 L0 1400 Z" fill="url(#water)" opacity="0.75" />
+
+  <g opacity="0.2" fill="#fff">
+    <circle cx="300" cy="200" r="6" />
+    <circle cx="500" cy="180" r="4" />
+    <circle cx="720" cy="240" r="5" />
+    <circle cx="920" cy="210" r="3" />
+    <circle cx="1100" cy="150" r="4" />
+    <circle cx="1350" cy="190" r="6" />
+    <circle cx="1550" cy="160" r="5" />
+    <circle cx="1750" cy="210" r="4" />
+    <circle cx="1980" cy="180" r="6" />
+    <circle cx="2200" cy="230" r="4" />
+  </g>
+
+  <g fill="rgba(255,255,255,0.35)">
+    <ellipse cx="400" cy="1180" rx="220" ry="32" />
+    <ellipse cx="820" cy="1200" rx="260" ry="34" />
+    <ellipse cx="1240" cy="1185" rx="220" ry="34" />
+    <ellipse cx="1640" cy="1195" rx="260" ry="32" />
+    <ellipse cx="2040" cy="1185" rx="220" ry="30" />
+  </g>
+</svg>

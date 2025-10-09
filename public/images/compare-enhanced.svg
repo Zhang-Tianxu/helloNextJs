@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">增强版风景照片</title>
+  <desc id="desc">一幅色调偏暖的山景，用于图片对比演示的新图。</desc>
+  <defs>
+    <linearGradient id="sky-warm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9f68" />
+      <stop offset="100%" stop-color="#ffe1c6" />
+    </linearGradient>
+    <linearGradient id="mountain-warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97d54" />
+      <stop offset="100%" stop-color="#ffb677" />
+    </linearGradient>
+    <linearGradient id="foreground-warm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8d4a22" />
+      <stop offset="100%" stop-color="#c8553d" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky-warm)" />
+  <circle cx="1280" cy="200" r="110" fill="#ffd36b" opacity="0.7" />
+  <path d="M0 520 L200 480 L400 520 L600 460 L800 500 L1000 420 L1200 460 L1400 420 L1600 460 L1600 900 L0 900 Z" fill="url(#mountain-warm)" opacity="0.9" />
+  <path d="M0 720 Q200 680 400 720 T800 720 T1200 740 T1600 700 L1600 900 L0 900 Z" fill="url(#foreground-warm)" opacity="0.9" />
+</svg>

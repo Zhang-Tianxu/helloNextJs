@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">原始风景照片</title>
+  <desc id="desc">一幅色调偏冷的山景，用于图片对比演示的原图。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87a8ff" />
+      <stop offset="100%" stop-color="#d6e4ff" />
+    </linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a506b" />
+      <stop offset="100%" stop-color="#5bc0be" />
+    </linearGradient>
+    <linearGradient id="foreground" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#3a506b" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)" />
+  <circle cx="320" cy="180" r="90" fill="#f1f5f9" opacity="0.45" />
+  <path d="M0 520 L200 480 L400 520 L600 460 L800 500 L1000 420 L1200 460 L1400 420 L1600 460 L1600 900 L0 900 Z" fill="url(#mountain)" opacity="0.85" />
+  <path d="M0 720 Q200 680 400 720 T800 720 T1200 740 T1600 700 L1600 900 L0 900 Z" fill="url(#foreground)" opacity="0.9" />
+</svg>
