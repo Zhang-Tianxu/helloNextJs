@@ -16,6 +16,27 @@ const BIBTEX_TEXT = `@inproceedings{zhang2024openworld,
   year={2024}
 }`;
 
+const paperTitle = "REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
+const paperDescription = "formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
+const paperAbstract = "Open-ended generation tasks require outputs to satisfy diverse and often implicit \
+task-specific evaluation rubrics. The sheer number of relevant rubrics leads to \
+prohibitively high verification costs and incomplete assessments of a response, \
+making reinforcement learning (RL) post-training with rubric-based rewards difficult \
+to scale. This problem is exacerbated by the fact that often the best way \
+to combine these rubrics into one single reward is also highly prompt-specific. \
+We propose Reinforcement Learning from Dynamic Critic Feedback (RLDCF), \
+a post-training approach that addresses these challenges via dynamic rubric verification. \
+Our approach employs a large language model (LLM) as a critic that \
+dynamically identifies only the most likely failure modes (e.g., a factual error or \
+unhandled edge case), which are then verified by an external validator to optimize \
+both generator and critic jointly. By training both the generator and the critic, \
+this game enhances the critic’s error detection and the generator’s output quality \
+while reducing required verifications. Our experiments demonstrate that RLDCF \
+improves factual accuracy in text generation and correctness in code generation, \
+while also outperforming exhaustive verification and reward model methods. We \
+show that dynamic critics are more effective than fixed critics, showcasing the \
+potential of RLDCF for scaling RL post-training to free-form generation tasks."
+
 // 复制按钮组件
 function CopyButton() {
   const [copied, setCopied] = useState(false);
@@ -56,7 +77,7 @@ export default function Paper() {
   return (
     <div className={styles.paperContainer}>
         <div className={styles.paperTitle}>
-            <div>REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS</div>
+            <div>{paperTitle}</div>
         </div>
         <div className={styles.paperAuthors}>
           <div className={styles.peopleList}>
@@ -82,10 +103,10 @@ export default function Paper() {
         </div>
         <div className={styles.paperAbstract}>
             <div>
-                {t('paper.frameworkDescription')}
+                {paperDescription}
             </div>
-            <div>{t('paper.abstract')}</div>
-            <div>{t('paper.abstractContent')}</div>
+            <div>Abstract</div>
+            <div>{paperAbstract}</div>
         </div>
         <div className={styles.paperEvaluation}>
             <div>{t('paper.evaluation')}</div>
