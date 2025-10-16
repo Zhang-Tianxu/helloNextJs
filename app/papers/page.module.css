@@ -1,3 +1,24 @@
+/* Define theme colors */
+:root {
+  --background: #f9f9f9;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --primary-color: #003366; /* 深蓝色，学术风格 */
+  --accent-color: #00509e; /* 较亮的蓝色 */
+  --surface: #ffffff;
+  --border-light: #d1d1d1;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-2xl: 48px;
+}
+
 /* Paper page styles */
 .paperContainer {
   max-width: 900px;
@@ -122,9 +143,6 @@
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-2xl);
   padding: var(--spacing-lg);
-  background-color: var(--surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-light);
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -132,7 +150,7 @@
   padding: var(--spacing-sm) var(--spacing-lg);
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: white;
-  border-radius: var(--radius-md);
+  border-radius: 9999px; /* 修改为胶囊型 */
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.2s ease;
@@ -162,6 +180,7 @@
   position: relative;
   animation: fadeInUp 0.8s ease-out 0.6s both;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .paperAbstract:hover {
@@ -174,10 +193,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 4px;
+  width: 100%;
+  height: 0px;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  z-index: 1;
 }
 
 .paperAbstract > div:first-child {
@@ -187,7 +208,7 @@
   margin-bottom: var(--spacing-lg);
   font-style: italic;
   text-align: center;
-  border-bottom: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: var(--spacing-lg);
 }
 

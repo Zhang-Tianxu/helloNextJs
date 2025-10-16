@@ -4,6 +4,8 @@ import { useState, useCallback } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import Navigation from '../components/Navigation';
+import Author from '../components/Author';
+import Organizations from '../components/Organizations';
 import styles from './page.module.css';
 
 // BibTeX文本常量
@@ -53,22 +55,22 @@ export default function Paper() {
   const { t } = useLanguage();
   return (
     <div className={styles.paperContainer}>
-        <LanguageSwitcher />
-        <Navigation />
         <div className={styles.paperTitle}>
-            <div>{t('paper.title')}</div>
+            <div>REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS</div>
         </div>
         <div className={styles.paperAuthors}>
-            <div className={styles.peopleList}>
-                <div className={styles.person}>Author 1</div>
-                <div className={styles.person}>Author 2</div>
-                <div className={styles.person}>Author 3</div>
-            </div>
-            <div className={styles.organizationList}>
-                <div className={styles.organization}>Organization 1</div>
-                <div className={styles.organization}>Organization 2</div>
-                <div className={styles.organization}>Organization 3</div>
-              </div>
+          <div className={styles.peopleList}>
+            <Author name="Mian Wu" superscript="†1" />
+            <Author name="Gavin Zhang" superscript="2"/>
+            <Author name="Sewon Min" superscript="2" />
+            <Author name="Sergey Levine" superscript="2" />
+            <Author name="Aviral Kumar" superscript="3" />
+          </div>
+          <div className={styles.organizationList}>
+            <Organizations superscript={1} organizations={["Shanghai Jiao Tong University"]} />
+            <Organizations superscript={2} organizations={["University of California","Berkeley"]} />
+            <Organizations superscript={3} organizations={["Carnegie Mellon University"]} />
+          </div>
         </div>
         <div className={styles.relatedLinks}>
             <button className={styles.linkButton}>{t('paper.links.paper')}</button>
