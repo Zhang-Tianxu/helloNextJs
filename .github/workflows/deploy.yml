@@ -1,8 +1,16 @@
 name: Deploy Next.js site to Pages
 
+
 on:
   # Runs on pushes targeting the main branch
   push:
+    branches:
+      - main
+
+  # Runs when a pull request is merged into main
+  pull_request:
+    types:
+      - closed
     branches:
       - main
 

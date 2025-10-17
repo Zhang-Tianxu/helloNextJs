@@ -6,6 +6,8 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import Navigation from '../components/Navigation';
 import Author from '../components/Author';
 import Organizations from '../components/Organizations';
+import ButtonWithIcon from '../components/ButtonWithIcon';
+import CodeBlockWithCopyBtn from '../components/CodeBlockWithCopyBtn';
 import styles from './page.module.css';
 
 // BibTeX文本常量
@@ -16,8 +18,8 @@ const BIBTEX_TEXT = `@inproceedings{zhang2024openworld,
   year={2024}
 }`;
 
-const paperTitle = "REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
-const paperDescription = "formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
+const paperTitle = "RLDCF: REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
+const paperDescription = "RLDCF formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
 const paperAbstract = "Open-ended generation tasks require outputs to satisfy diverse and often implicit \
 task-specific evaluation rubrics. The sheer number of relevant rubrics leads to \
 prohibitively high verification costs and incomplete assessments of a response, \
@@ -37,41 +39,6 @@ while also outperforming exhaustive verification and reward model methods. We \
 show that dynamic critics are more effective than fixed critics, showcasing the \
 potential of RLDCF for scaling RL post-training to free-form generation tasks."
 
-// 复制按钮组件
-function CopyButton() {
-  const [copied, setCopied] = useState(false);
-  const { t } = useLanguage();
-
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(BIBTEX_TEXT);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error(t('paper.copyFailed'), err);
-    }
-  }, [t]);
-
-  return (
-    <button 
-      className={styles.copyButton}
-      onClick={handleCopy}
-      title={copied ? t('paper.copiedTitle') : t('paper.copyTitle')}
-    >
-      {copied ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-        </svg>
-      ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-        </svg>
-      )}
-      <span>{copied ? t('paper.copied') : t('paper.copy')}</span>
-    </button>
-  );
-}
-
 export default function Paper() {
   const { t } = useLanguage();
   return (
@@ -81,7 +48,7 @@ export default function Paper() {
         </div>
         <div className={styles.paperAuthors}>
           <div className={styles.peopleList}>
-            <Author name="Mian Wu" superscript="†1" />
+            <Author name="Mian Wu" superscript="†1" link='https://www.baidu.com'/>
             <Author name="Gavin Zhang" superscript="2"/>
             <Author name="Sewon Min" superscript="2" />
             <Author name="Sergey Levine" superscript="2" />
@@ -94,12 +61,9 @@ export default function Paper() {
           </div>
         </div>
         <div className={styles.relatedLinks}>
-            <button className={styles.linkButton}>{t('paper.links.paper')}</button>
-            <button className={styles.linkButton}>{t('paper.links.arxiv')}</button>
-            <button className={styles.linkButton}>{t('paper.links.code')}</button>
-            <button className={styles.linkButton}>{t('paper.links.slides')}</button>
-            <button className={styles.linkButton}>{t('paper.links.thread')}</button>
-            <button className={styles.linkButton}>{t('paper.links.bilibili')}</button>
+          <ButtonWithIcon text="paper" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ctext x='0' y='16' font-size='16'%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E" />
+          <ButtonWithIcon text="code" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff' width='20' height='20'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E" />
+          <ButtonWithIcon text="slides" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ctext x='0' y='16' font-size='16'%3E%F0%9F%93%91%3C/text%3E%3C/svg%3E" />
         </div>
         <div className={styles.paperAbstract}>
             <div>
@@ -107,24 +71,42 @@ export default function Paper() {
             </div>
             <div>Abstract</div>
             <div>{paperAbstract}</div>
+            <div className={styles.evaluationImages}>
+              <img src="/images/paper_img1.png" alt="Evaluation 3" className={styles.evalImage} />
+            </div>
         </div>
         <div className={styles.paperEvaluation}>
-            <div>{t('paper.evaluation')}</div>
-            <div className={styles.evaluationImages}>
-                {/* <img src="/images/paper_eval3.png" alt="Evaluation 3" className={styles.evalImage}/> */}
-            </div>
+        <div>Evaluation</div>
+        <div className={styles.evaluationDescriptions}>
+          Performance comparison on factual text generation. RLDCF achieves the highest FactScore across all settings while using fewer verification calls than FactTune-FS.
         </div>
-        <div className={styles.paperBibtex}>
-            <div className={styles.bibtexHeader}>
-                <span>{t('paper.bibtex')}</span>
-                <CopyButton />
-            </div>
-            <div className={styles.codeBlock}>
-                <pre className={styles.bibtexCode}>
-                    <code>{BIBTEX_TEXT}</code>
-                </pre>
-            </div>
-        </div>    
+        <div className={styles.evaluationImages}>
+          <img src="/images/eval_res1.png" alt="Evaluation 3" className={styles.evalImage} />
+        </div>
+        <div className={styles.evaluationDescriptions}>
+          RLDCF achieves the highest factuality scores across model sizes and output lengths, while using significantly fewer verification calls. For instance, on Qwen3-8B with eight-sentence generation, it reaches a FactScore of 0.889, outperforming FactTune-FS (0.867) and ArmoRM (0.723), but with only 77k verification calls compared to 439k for FactTune-FS. This efficiency gap grows with output length: FactTune-FS requires 4.4× more verification calls in the four-sentence setting (169k vs. 39k) and 5.7× more in the eight-sentence setting (439k vs. 77k). This shows that RLDCF scales more efficiently as the generation complexity increases.
+        </div>
+        <div className={styles.evaluationImages}>
+          <img src="/images/eval_res2.png" alt="Evaluation 3" className={styles.evalImage} />
+        </div>
+        <div className={styles.evaluationDescriptions}>
+          Average validator outcomes on suspicious facts proposed by the critic during factual biography generation. Higher values indicate that the critic more often misjudges correct facts (i.e., weaker supervision).
+        </div>
+        <div className={styles.evaluationImages}>
+          <img src="/images/eval_res3.png" alt="Evaluation 3" className={styles.evalImage} />
+        </div>
+        <div className={styles.evaluationDescriptions}>
+          Despite training on only 2,000 problems (9% of the dataset used for AceCoder-RM and AceCoder-Rule), RLDCF achieves the highest average scores: 53.2 using Qwen2.5-Coder-7B-Base and 56.6 using Qwen2.5- Coder-7B-Instruct, consistently outperforming both enumerative method (AceCoder-Rule) and static reward model method (AceCoder-RM) across the majority of benchmarks. We observe from Table 4 that AceCoder-RM not only fails to improve performance but can even degrade it under noisy validation. For example, on HumanEval, performance drops from 91.5 to 89.0 despite using the competetive reward model Acecoder-RM-7B, indicating reward hacking.
+        </div>
+        <div className={styles.evaluationImages}>
+          <img src="/images/eval_res4.png" alt="Evaluation 3" className={styles.evalImage} />
+        </div>
+        </div>
+
+        <div className={styles.paperReference}>
+            <div>Reference</div>
+            <CodeBlockWithCopyBtn code={BIBTEX_TEXT} />
+        </div>
     </div>
   );
 }
