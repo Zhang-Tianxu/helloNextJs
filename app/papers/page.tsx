@@ -60,9 +60,9 @@ export default function Paper() {
           </div>
         </div>
         <div className={styles.relatedLinks}>
-          <ButtonWithIcon text="paper"></ButtonWithIcon>
-          <ButtonWithIcon text="code"></ButtonWithIcon>
-          <ButtonWithIcon text="slides"></ButtonWithIcon>
+          <ButtonWithIcon text="paper" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ctext x='0' y='16' font-size='16'%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E" />
+          <ButtonWithIcon text="code" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ctext x='0' y='16' font-size='16'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+          <ButtonWithIcon text="slides" iconUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ctext x='0' y='16' font-size='16'%3E%F0%9F%93%91%3C/text%3E%3C/svg%3E" />
         </div>
         <div className={styles.paperAbstract}>
             <div>
