@@ -3,8 +3,8 @@
   --background: #f9f9f9;
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
-  --primary-color: #003366; /* 深蓝色，学术风格 */
-  --accent-color: #00509e; /* 较亮的蓝色 */
+  --primary-color: #005233; /* 深蓝色，学术风格 */
+  --accent-color: #03a069; /* 较亮的蓝色 */
   --surface: #ffffff;
   --border-light: #d1d1d1;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -144,30 +144,6 @@
   margin-bottom: var(--spacing-2xl);
   padding: var(--spacing-lg);
   animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.linkButton {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  color: white;
-  border-radius: 9999px; /* 修改为胶囊型 */
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-  border: none;
-  cursor: pointer;
-}
-
-.linkButton:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-}
-
-.linkButton:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
 }
 
 /* Abstract section */

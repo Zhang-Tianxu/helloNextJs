@@ -6,6 +6,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import Navigation from '../components/Navigation';
 import Author from '../components/Author';
 import Organizations from '../components/Organizations';
+import ButtonWithIcon from '../components/ButtonWithIcon';
 import styles from './page.module.css';
 
 // BibTeX文本常量
@@ -16,8 +17,8 @@ const BIBTEX_TEXT = `@inproceedings{zhang2024openworld,
   year={2024}
 }`;
 
-const paperTitle = "REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
-const paperDescription = "formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
+const paperTitle = "RLDCF: REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
+const paperDescription = "RLDCF formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
 const paperAbstract = "Open-ended generation tasks require outputs to satisfy diverse and often implicit \
 task-specific evaluation rubrics. The sheer number of relevant rubrics leads to \
 prohibitively high verification costs and incomplete assessments of a response, \
@@ -37,41 +38,6 @@ while also outperforming exhaustive verification and reward model methods. We \
 show that dynamic critics are more effective than fixed critics, showcasing the \
 potential of RLDCF for scaling RL post-training to free-form generation tasks."
 
-// 复制按钮组件
-function CopyButton() {
-  const [copied, setCopied] = useState(false);
-  const { t } = useLanguage();
-
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(BIBTEX_TEXT);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error(t('paper.copyFailed'), err);
-    }
-  }, [t]);
-
-  return (
-    <button 
-      className={styles.copyButton}
-      onClick={handleCopy}
-      title={copied ? t('paper.copiedTitle') : t('paper.copyTitle')}
-    >
-      {copied ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-        </svg>
-      ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-        </svg>
-      )}
-      <span>{copied ? t('paper.copied') : t('paper.copy')}</span>
-    </button>
-  );
-}
-
 export default function Paper() {
   const { t } = useLanguage();
   return (
@@ -81,7 +47,7 @@ export default function Paper() {
         </div>
         <div className={styles.paperAuthors}>
           <div className={styles.peopleList}>
-            <Author name="Mian Wu" superscript="†1" />
+            <Author name="Mian Wu" superscript="†1" link='https://www.baidu.com'/>
             <Author name="Gavin Zhang" superscript="2"/>
             <Author name="Sewon Min" superscript="2" />
             <Author name="Sergey Levine" superscript="2" />
@@ -94,12 +60,9 @@ export default function Paper() {
           </div>
         </div>
         <div className={styles.relatedLinks}>
-            <button className={styles.linkButton}>{t('paper.links.paper')}</button>
-            <button className={styles.linkButton}>{t('paper.links.arxiv')}</button>
-            <button className={styles.linkButton}>{t('paper.links.code')}</button>
-            <button className={styles.linkButton}>{t('paper.links.slides')}</button>
-            <button className={styles.linkButton}>{t('paper.links.thread')}</button>
-            <button className={styles.linkButton}>{t('paper.links.bilibili')}</button>
+          <ButtonWithIcon text="paper"></ButtonWithIcon>
+          <ButtonWithIcon text="code"></ButtonWithIcon>
+          <ButtonWithIcon text="slides"></ButtonWithIcon>
         </div>
         <div className={styles.paperAbstract}>
             <div>
@@ -117,7 +80,7 @@ export default function Paper() {
         <div className={styles.paperBibtex}>
             <div className={styles.bibtexHeader}>
                 <span>{t('paper.bibtex')}</span>
-                <CopyButton />
+                {/* <CopyButton /> */}
             </div>
             <div className={styles.codeBlock}>
                 <pre className={styles.bibtexCode}>
