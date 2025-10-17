@@ -1,27 +1,4 @@
 /* Define theme colors */
-<<<<<<< Updated upstream
-:root {
-  --background: #f9f9f9;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --primary-color: #003366; /* 深蓝色，学术风格 */
-  --accent-color: #00509e; /* 较亮的蓝色 */
-  --surface: #ffffff;
-  --border-light: #d1d1d1;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-2xl: 48px;
-}
-=======
->>>>>>> Stashed changes
-
 /* Paper page styles */
 .paperContainer {
   max-width: 900px;
