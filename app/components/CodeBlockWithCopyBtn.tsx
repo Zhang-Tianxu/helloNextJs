@@ -7,12 +7,12 @@ interface CodeBlockWithCopyBtnProps {
 }
 
 // 复制按钮组件
-function CopyButton() {
+const CopyButton: React.FC<CodeBlockWithCopyBtnProps> = ({code}) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText("copy 内容");
+      await navigator.clipboard.writeText(code);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -46,7 +46,7 @@ const CodeBlockWithCopyBtn: React.FC<CodeBlockWithCopyBtnProps> = ({ code }) => 
         <div className={styles.paperBibtex}>
             <div className={styles.bibtexHeader}>
                 <span>BiTex</span>
-                <CopyButton />
+                <CopyButton code={code} />
             </div>
             <div className={styles.codeBlock}>
                 <pre className={styles.bibtexCode}>
