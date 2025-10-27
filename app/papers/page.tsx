@@ -67,7 +67,10 @@ export default function Paper() {
         </div>
         <div className={styles.paperAbstract}>
             <div>
+              <div style={{fontSize: '1.5rem', fontWeight: 600}}>TL;DR</div>
+              <div>
                 {paperDescription}
+              </div>
             </div>
             <div>Abstract</div>
             <div>{paperAbstract}</div>
@@ -101,6 +104,45 @@ export default function Paper() {
         <div className={styles.evaluationImages}>
           <img src="/helloNextJs/images/eval_res4.png" alt="Evaluation 3" className={styles.evalImage} />
         </div>
+        </div>
+
+        <div className={styles.paperVideos}>
+          <div>Videos</div>
+          <div className={styles.videosGrid}>
+            <div className={styles.videoItem}>
+              <video 
+                controls 
+                className={styles.video}
+                preload="metadata"
+              >
+                <source src="/helloNextJs/videos/A-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className={styles.videoLabel}>Video A</div>
+            </div>
+            <div className={styles.videoItem}>
+              <video 
+                controls 
+                className={styles.video}
+                preload="metadata"
+              >
+                <source src="/helloNextJs/videos/B-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className={styles.videoLabel}>Video B</div>
+            </div>
+            <div className={styles.videoItem}>
+              <video 
+                controls 
+                className={styles.video}
+                preload="metadata"
+              >
+                <source src="/helloNextJs/videos/C-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className={styles.videoLabel}>Video C</div>
+            </div>
+          </div>
         </div>
 
         <div className={styles.paperReference}>
