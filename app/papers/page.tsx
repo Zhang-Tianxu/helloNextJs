@@ -48,11 +48,11 @@ export default function Paper() {
         </div>
         <div className={styles.paperAuthors}>
           <div className={styles.peopleList}>
-            <Author name="Mian Wu" superscript="†1" link='https://www.baidu.com'/>
+            <Author name="Mian Wu" superscript="†1"/>
             <Author name="Gavin Zhang" superscript="2"/>
-            <Author name="Sewon Min" superscript="2" />
-            <Author name="Sergey Levine" superscript="2" />
-            <Author name="Aviral Kumar" superscript="3" />
+            <Author name="Sewon Min" superscript="2" link='https://www.sewonmin.com/'/>
+            <Author name="Sergey Levine" superscript="2" link='https://people.eecs.berkeley.edu/~svlevine/'/>
+            <Author name="Aviral Kumar" superscript="3" link="https://aviralkumar2907.github.io/"/>
           </div>
           <div className={styles.organizationList}>
             <Organizations superscript={1} organizations={["Shanghai Jiao Tong University"]} />
