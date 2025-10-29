@@ -464,6 +464,7 @@
 
 /* Videos section */
 .videosGrid {
+  display: grid;
   padding-bottom: 10px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-lg);
@@ -479,7 +480,8 @@
 }
 
 .video {
-  width: 100%;
+  width: auto;
+  height: 100%;
   max-width: 100%;
   /* height: auto; */
   border-radius: var(--radius-md);

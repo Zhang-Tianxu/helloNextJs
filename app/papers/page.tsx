@@ -103,6 +103,7 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/A-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <text>baseline 1</text>
             </div>
             <div className={styles.videoItem}>
               <video 
@@ -115,8 +116,10 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/B-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <text>baseline 2</text>
             </div>
-            <div className={styles.videoItem}>
+          </div>
+            <div style={{height: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
               <video 
                 autoPlay 
                 loop 
@@ -127,8 +130,8 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/C-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <text>RLDCF</text>
             </div>
-          </div>
         </div>
         <div className={styles.paperEvaluation}>
         <div>Evaluation</div>
