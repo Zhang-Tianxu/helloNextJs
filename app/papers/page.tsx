@@ -74,9 +74,44 @@ export default function Paper() {
             </div>
             <div>Abstract</div>
             <div>{paperAbstract}</div>
-            <div className={styles.evaluationImages}>
-              <img src="/helloNextJs/images/paper_img1.png" alt="Evaluation 3" className={styles.evalImage} />
+          <div className={styles.videosGrid}>
+            <div className={styles.videoItem}>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                className={styles.video}
+                preload="auto"
+              >
+                <source src="/helloNextJs/videos/A-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
+            <div className={styles.videoItem}>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                className={styles.video}
+                preload="auto"
+              >
+                <source src="/helloNextJs/videos/B-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className={styles.videoItem}>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                className={styles.video}
+                preload="auto"
+              >
+                <source src="/helloNextJs/videos/C-7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
         <div className={styles.paperEvaluation}>
         <div>Evaluation</div>
@@ -106,44 +141,6 @@ export default function Paper() {
         </div>
         </div>
 
-        <div className={styles.paperVideos}>
-          <div>Videos</div>
-          <div className={styles.videosGrid}>
-            <div className={styles.videoItem}>
-              <video 
-                controls 
-                className={styles.video}
-                preload="metadata"
-              >
-                <source src="/helloNextJs/videos/A-7.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className={styles.videoLabel}>Video A</div>
-            </div>
-            <div className={styles.videoItem}>
-              <video 
-                controls 
-                className={styles.video}
-                preload="metadata"
-              >
-                <source src="/helloNextJs/videos/B-7.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className={styles.videoLabel}>Video B</div>
-            </div>
-            <div className={styles.videoItem}>
-              <video 
-                controls 
-                className={styles.video}
-                preload="metadata"
-              >
-                <source src="/helloNextJs/videos/C-7.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className={styles.videoLabel}>Video C</div>
-            </div>
-          </div>
-        </div>
 
         <div className={styles.paperReference}>
             <div>Reference</div>
