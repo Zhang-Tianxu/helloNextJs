@@ -4,13 +4,14 @@ import styles from './ButtonWithIcon.module.css';
 interface ButtonWithIconProps {
   text: string;
   iconUrl?: string;
+  onClick?: () => void;
 }
 
 
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ text, iconUrl }) => {
+const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ text, iconUrl, onClick }) => {
   return (
     <div>
-      <button className={styles.linkButton}>
+      <button className={styles.linkButton} onClick={onClick}>
         {iconUrl && (
           <img
             src={iconUrl}
