@@ -11,33 +11,37 @@ import CodeBlockWithCopyBtn from '../components/CodeBlockWithCopyBtn';
 import styles from './page.module.css';
 
 // BibTeX文本常量
-const BIBTEX_TEXT = `@inproceedings{zhang2024openworld,
-  title={Open-World Reinforcement Learning over Long Short-Term Imagination},
-  author={Zhang, Yuxin and Li, Yao and Chen, Tianyi and Zhang, Rui and Song, Shuyang and Wang, Yaliang and Song, Linfeng and Song, Dacheng and Zhang, Changshui},
-  booktitle={International Conference on Learning Representations},
-  year={2024}
+const BIBTEX_TEXT = `@article{wu2025reinforcement,
+  title={Reinforcement Learning with Adversarial Critic for Free-form Generations},
+  author={Wu, Mian and Zhang, Gavin and Min, Sewon and Levine, Sergey and Kumar, Aviral},
+  journal={arXiv preprint arXiv:tbd}, 
+  year={2025},
+  institution={Shanghai Jiao Tong University and University of California, Berkeley and Carnegie Mellon University},
+  eprint={2510.12345},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
 }`;
 
-const paperTitle = "RLDCF: REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
-const paperDescription = "RLDCF formulates the problem as an adversarial game between a generator and a critic. The critic is a learned model that proposes a rubric where the generator’s output is likely to fail, and an external validator verifies this. Both models are trained jointly: the critic is rewarded when it correctly pinpoints a rubric that the generator fails, while the generator is rewarded when the critic is unable to do so.";
+const paperTitle = "RLAC: REINFORCEMENT LEARNING FROM DYNAMIC CRITIC FEEDBACK FOR FREE-FORM GENERATIONS";
+const paperDescription = "RLAF trains a generator and a dynamic critic in an adversarial game, teaching the system to learn what deserves verification, and achieving scalable, prompt-specific, and verifiable RL post-training for free-form generation tasks.";
 const paperAbstract = "Open-ended generation tasks require outputs to satisfy diverse and often implicit \
 task-specific evaluation rubrics. The sheer number of relevant rubrics leads to \
 prohibitively high verification costs and incomplete assessments of a response, \
 making reinforcement learning (RL) post-training with rubric-based rewards difficult \
 to scale. This problem is exacerbated by the fact that often the best way \
 to combine these rubrics into one single reward is also highly prompt-specific. \
-We propose Reinforcement Learning from Dynamic Critic Feedback (RLDCF), \
+We propose Reinforcement Learning from Dynamic Critic Feedback (RLAC), \
 a post-training approach that addresses these challenges via dynamic rubric verification. \
 Our approach employs a large language model (LLM) as a critic that \
 dynamically identifies only the most likely failure modes (e.g., a factual error or \
 unhandled edge case), which are then verified by an external validator to optimize \
 both generator and critic jointly. By training both the generator and the critic, \
 this game enhances the critic’s error detection and the generator’s output quality \
-while reducing required verifications. Our experiments demonstrate that RLDCF \
+while reducing required verifications. Our experiments demonstrate that RLAC \
 improves factual accuracy in text generation and correctness in code generation, \
 while also outperforming exhaustive verification and reward model methods. We \
 show that dynamic critics are more effective than fixed critics, showcasing the \
-potential of RLDCF for scaling RL post-training to free-form generation tasks."
+potential of RLAC for scaling RL post-training to free-form generation tasks."
 
 export default function Paper() {
   const { t } = useLanguage();
@@ -103,7 +107,7 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/A-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <text>baseline 1</text>
+              <text>Enumerative Method</text>
             </div>
             <div className={styles.videoItem}>
               <video 
@@ -116,7 +120,7 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/B-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <text>baseline 2</text>
+              <text>Reward Model</text>
             </div>
           </div>
             <div style={{height: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -130,19 +134,19 @@ export default function Paper() {
                 <source src="/helloNextJs/videos/C-7.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <text>RLDCF</text>
+              <text>RLAC</text>
             </div>
         </div>
         <div className={styles.paperEvaluation}>
         <div>Evaluation</div>
         <div className={styles.evaluationDescriptions}>
-          Performance comparison on factual text generation. RLDCF achieves the highest FactScore across all settings while using fewer verification calls than FactTune-FS.
+          Performance comparison on factual text generation. RLAC achieves the highest FactScore across all settings while using fewer verification calls than FactTune-FS.
         </div>
         <div className={styles.evaluationImages}>
           <img src="/helloNextJs/images/eval_res1.png" alt="Evaluation 3" className={styles.evalImage} />
         </div>
         <div className={styles.evaluationDescriptions}>
-          RLDCF achieves the highest factuality scores across model sizes and output lengths, while using significantly fewer verification calls. For instance, on Qwen3-8B with eight-sentence generation, it reaches a FactScore of 0.889, outperforming FactTune-FS (0.867) and ArmoRM (0.723), but with only 77k verification calls compared to 439k for FactTune-FS. This efficiency gap grows with output length: FactTune-FS requires 4.4× more verification calls in the four-sentence setting (169k vs. 39k) and 5.7× more in the eight-sentence setting (439k vs. 77k). This shows that RLDCF scales more efficiently as the generation complexity increases.
+          RLAC achieves the highest factuality scores across model sizes and output lengths, while using significantly fewer verification calls. For instance, on Qwen3-8B with eight-sentence generation, it reaches a FactScore of 0.889, outperforming FactTune-FS (0.867) and ArmoRM (0.723), but with only 77k verification calls compared to 439k for FactTune-FS. This efficiency gap grows with output length: FactTune-FS requires 4.4× more verification calls in the four-sentence setting (169k vs. 39k) and 5.7× more in the eight-sentence setting (439k vs. 77k). This shows that RLAC scales more efficiently as the generation complexity increases.
         </div>
         <div className={styles.evaluationImages}>
           <img src="/helloNextJs/images/eval_res2.png" alt="Evaluation 3" className={styles.evalImage} />
@@ -154,7 +158,7 @@ export default function Paper() {
           <img src="/helloNextJs/images/eval_res3.png" alt="Evaluation 3" className={styles.evalImage} />
         </div>
         <div className={styles.evaluationDescriptions}>
-          Despite training on only 2,000 problems (9% of the dataset used for AceCoder-RM and AceCoder-Rule), RLDCF achieves the highest average scores: 53.2 using Qwen2.5-Coder-7B-Base and 56.6 using Qwen2.5- Coder-7B-Instruct, consistently outperforming both enumerative method (AceCoder-Rule) and static reward model method (AceCoder-RM) across the majority of benchmarks. We observe from Table 4 that AceCoder-RM not only fails to improve performance but can even degrade it under noisy validation. For example, on HumanEval, performance drops from 91.5 to 89.0 despite using the competetive reward model Acecoder-RM-7B, indicating reward hacking.
+          Despite training on only 2,000 problems (9% of the dataset used for AceCoder-RM and AceCoder-Rule), RLAC achieves the highest average scores: 53.2 using Qwen2.5-Coder-7B-Base and 56.6 using Qwen2.5- Coder-7B-Instruct, consistently outperforming both enumerative method (AceCoder-Rule) and static reward model method (AceCoder-RM) across the majority of benchmarks. We observe from Table 4 that AceCoder-RM not only fails to improve performance but can even degrade it under noisy validation. For example, on HumanEval, performance drops from 91.5 to 89.0 despite using the competetive reward model Acecoder-RM-7B, indicating reward hacking.
         </div>
         <div className={styles.evaluationImages}>
           <img src="/helloNextJs/images/eval_res4.png" alt="Evaluation 3" className={styles.evalImage} />
