@@ -101,6 +101,7 @@ export default function Paper() {
                 autoPlay 
                 loop 
                 muted 
+                playsInline
                 className={styles.video}
                 preload="auto"
               >
@@ -114,6 +115,7 @@ export default function Paper() {
                 autoPlay 
                 loop 
                 muted 
+                playsInline
                 className={styles.video}
                 preload="auto"
               >
@@ -122,12 +124,12 @@ export default function Paper() {
               </video>
               <text>Reward Model</text>
             </div>
-          </div>
-            <div style={{height: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div className={styles.videoItem}>
               <video 
                 autoPlay 
                 loop 
                 muted 
+                playsInline
                 className={styles.video}
                 preload="auto"
               >
@@ -136,6 +138,7 @@ export default function Paper() {
               </video>
               <text>RLAC</text>
             </div>
+          </div>
         </div>
         <div className={styles.paperEvaluation}>
         <div>Evaluation</div>
@@ -143,25 +146,25 @@ export default function Paper() {
           Performance comparison on factual text generation. RLAC achieves the highest FactScore across all settings while using fewer verification calls than FactTune-FS.
         </div>
         <div className={styles.evaluationImages}>
-          <img src="/helloNextJs/images/eval_res1.png" alt="Evaluation 3" className={styles.evalImage} />
+          <img src="/helloNextJs/images/eval_res1.png" alt="Evaluation 1" className={`${styles.evalImage} ${styles.evalImageSmall}`} />
         </div>
         <div className={styles.evaluationDescriptions}>
           RLAC achieves the highest factuality scores across model sizes and output lengths, while using significantly fewer verification calls. For instance, on Qwen3-8B with eight-sentence generation, it reaches a FactScore of 0.889, outperforming FactTune-FS (0.867) and ArmoRM (0.723), but with only 77k verification calls compared to 439k for FactTune-FS. This efficiency gap grows with output length: FactTune-FS requires 4.4× more verification calls in the four-sentence setting (169k vs. 39k) and 5.7× more in the eight-sentence setting (439k vs. 77k). This shows that RLAC scales more efficiently as the generation complexity increases.
         </div>
         <div className={styles.evaluationImages}>
-          <img src="/helloNextJs/images/eval_res2.png" alt="Evaluation 3" className={styles.evalImage} />
+          <img src="/helloNextJs/images/eval_res2.png" alt="Evaluation 2" className={styles.evalImage} />
         </div>
         <div className={styles.evaluationDescriptions}>
           Average validator outcomes on suspicious facts proposed by the critic during factual biography generation. Higher values indicate that the critic more often misjudges correct facts (i.e., weaker supervision).
         </div>
         <div className={styles.evaluationImages}>
-          <img src="/helloNextJs/images/eval_res3.png" alt="Evaluation 3" className={styles.evalImage} />
+          <img src="/helloNextJs/images/eval_res3.png" alt="Evaluation 3" className={`${styles.evalImage} ${styles.evalImageSmall}`} />
         </div>
         <div className={styles.evaluationDescriptions}>
           Despite training on only 2,000 problems (9% of the dataset used for AceCoder-RM and AceCoder-Rule), RLAC achieves the highest average scores: 53.2 using Qwen2.5-Coder-7B-Base and 56.6 using Qwen2.5- Coder-7B-Instruct, consistently outperforming both enumerative method (AceCoder-Rule) and static reward model method (AceCoder-RM) across the majority of benchmarks. We observe from Table 4 that AceCoder-RM not only fails to improve performance but can even degrade it under noisy validation. For example, on HumanEval, performance drops from 91.5 to 89.0 despite using the competetive reward model Acecoder-RM-7B, indicating reward hacking.
         </div>
         <div className={styles.evaluationImages}>
-          <img src="/helloNextJs/images/eval_res4.png" alt="Evaluation 3" className={styles.evalImage} />
+          <img src="/helloNextJs/images/eval_res4.png" alt="Evaluation 4" className={styles.evalImage} />
         </div>
         </div>
 

@@ -240,6 +240,14 @@
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
 }
+
+/* 让Evaluation 3的图片变小 */
+.evalImageSmall {
+  max-width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
 .evaluationDescriptions {
   color: var(--text-secondary);
 }
@@ -266,7 +274,7 @@
   
   .relatedLinks {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
   
   .linkButton {
@@ -294,10 +302,6 @@
   }
   
   .evaluationImages {
-    grid-template-columns: 1fr;
-  }
-  
-  .videosGrid {
     grid-template-columns: 1fr;
   }
   
@@ -462,11 +466,11 @@
   }
 }
 
-/* Videos section */
+/* Videos section - 移动优先：默认单列布局 */
 .videosGrid {
   display: grid;
   padding-bottom: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }
@@ -480,19 +484,31 @@
 }
 
 .video {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
   max-width: 100%;
-  /* height: auto; */
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: #000;
+  display: block;
+  object-fit: contain;
 }
 
 .video:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
+}
+
+/* 桌面端：前两个视频并排，第三个视频独占一行 */
+@media (min-width: 769px) {
+  .videosGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .videoItem:nth-child(3) {
+    grid-column: 1 / -1;
+  }
 }
 
 .videoLabel {
